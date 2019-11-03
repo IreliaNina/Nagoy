@@ -7,7 +7,7 @@ The library is compiled static for x64. Below is a sample on how to use the libr
 ```cpp
 #include <iostream>
 #include "Nagoy.hpp"
-#pragma comment(lib,"Http")
+#pragma comment(lib,"Nagoy")
 int main()
 {
 	std::unique_ptr<NagoyNS::Nagoy> ref = NagoyNS::createref();
