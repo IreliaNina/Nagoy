@@ -17,8 +17,10 @@ namespace NagoyNS {
 	public:
 		char* data;
 		uint64_t length;
+
 		NagoyData();
 		~NagoyData();
+
 	};
 	class RequestType {
 	public:
@@ -69,8 +71,8 @@ namespace NagoyNS {
 	NagoyArc createref();
 	bool nagoyconnect(const NagoyArc& ref, std::string&& server, NagoyConnectionPort port, NagoyServiceType type);
 	bool nagoyconnect(const NagoyArc& ref, std::string& server, NagoyConnectionPort port, NagoyServiceType type);
-	bool nagoyrequest(const NagoyArc& ref, std::string& requestpath, RequestType& type,std::string& query, bool usingssl);
-	bool nagoyrequest(const NagoyArc& ref, std::string&& requestpath, RequestType&& type, std::string& query, bool usingssl);
+	bool nagoyrequest(const NagoyArc& ref, std::string& requestpath, RequestType& type, void* query, uint64_t querysize, bool usingssl);
+	bool nagoyrequest(const NagoyArc& ref, std::string&& requestpath, RequestType&& type, void* query, uint64_t querysize, bool usingssl);
 	void nagoypushheader(const NagoyArc& ref, std::string& key, std::string& val);
 	void nagoypushheader(const NagoyArc& ref, std::string&& key, std::string&& val);
 	std::unique_ptr<NagoyData> readresponseheaders(const NagoyArc& ref);
