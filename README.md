@@ -17,7 +17,7 @@ int main()
 	NagoyNS::nagoypushheader(ref, "accept-encoding", "none");
 	NagoyNS::nagoypushheader(ref, "Content-Type", "application/x-www-form-urlencoded");
 	std::string query = "name=yousopunny";
-	if (!NagoyNS::nagoyrequest(ref, "/post", NagoyNS::RequestTypePost(), query, true))
+	if (!NagoyNS::nagoyrequest(ref, "/post", NagoyNS::RequestTypePost(), (void*)query.c_str(),query.length(), true))
 		return -1;
 
 	NagoyNS::NagoyDataArc data = NagoyNS::readresponseheaders(ref);
