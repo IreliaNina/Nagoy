@@ -3,7 +3,7 @@ Simple http client wrapper for WinInet
 
 Include the header file into your project and link the library. 
 The library is compiled static for x64. Below is a sample on how to use the library.
-
+The library makes a request to https://postman-echo.com/post
 ```cpp
 #include <iostream>
 #include "Nagoy.hpp"
