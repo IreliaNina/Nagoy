@@ -23,9 +23,9 @@ int main()
 	NagoyNS::NagoyDataArc data = NagoyNS::readresponseheaders(ref);
 	data->data[data->length-1] = 0;
 	std::cout << data->data;
-	NagoyNS::NagoyDataArc body = NagoyNS::readrequest(ref);
-	body->data[body->length-1] = 0;
-	std::cout << body->data;
+	data = NagoyNS::readrequest(ref);
+	data->data[data->length-1] = 0;
+	std::cout << data->data;
 	return 0;
 }
 ```
